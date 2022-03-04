@@ -1,0 +1,6 @@
+configs:
+  roots: "cassandra:9042"
+  keyspace: "pulsar_handson_keyspace"
+  columnFamily: "pulsar_handson_table"
+  keyname: "id"
+  columnName: "name"

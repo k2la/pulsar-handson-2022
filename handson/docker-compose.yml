@@ -1,0 +1,44 @@
+version: "3.7"
+
+services:
+  pulsar:
+    image: apachepulsar/pulsar:2.9.1
+    command: bin/pulsar standalone
+    volumes:
+      - ./conf/broker.conf:/pulsar/conf/broker.conf
+      - ./connectors:/pulsar/connectors
+      - ./data:/pulsar/data
+  pulsar-client:
+    image: apachepulsar/pulsar:2.9.1
+    volumes:
+      - ./conf/client.conf:/pulsar/conf/client.conf
+      - ./client:/pulsar/client
+      - ./function:/pulsar/function
+      - ./sink:/pulsar/sink
+      - ./codes:/pulsar/codes
+    hostname: pulsar-client
+  cassandra:
+    image: cassandra:latest
+  pulsar-admin:
+    image: apachepulsar/pulsar:2.9.1
+    volumes:
+      - ./conf/client.conf:/pulsar/conf/client.conf
+      - ./client:/pulsar/client
+      - ./function:/pulsar/function
+      - ./sink:/pulsar/sink
+      - ./codes:/pulsar/codes
+    hostname: pulsar-admin
+  consumer:
+    image: apachepulsar/pulsar:2.9.1
+    volumes:
+      - ./conf/client.conf:/pulsar/conf/client.conf
+      - ./client:/pulsar/client
+      - ./codes:/pulsar/codes
+    hostname: consumer
+  producer:
+    image: apachepulsar/pulsar:2.9.1
+    volumes:
+      - ./conf/client.conf:/pulsar/conf/client.conf
+      - ./client:/pulsar/client
+      - ./codes:/pulsar/codes
+    hostname: producer
