@@ -42,5 +42,5 @@ docker-compose up
 「Pulsar Functions/Pulsar IO」のハンズオンで、メッセージをCassandraに流すために下記の準備が必要となります。
 
 1. [こちら](https://www.apache.org/dyn/mirrors/mirrors.cgi?action=download&filename=pulsar/pulsar-2.9.1/connectors/pulsar-io-cassandra-2.9.1.nar) をクリックして、`pulsar-io-cassandra-2.9.1.nar`をダウンロード
-2. `functions`や`io`ディレクトリと同じ階層に`connectors`ディレクトリを作成
-3. `connectors`ディレクトリに`pulsar-io-cassandra-2.9.1.nar`を移動
+2. `handson`ディレクトリ内に`connectors`ディレクトリを作成
+3. 作成した`connectors`ディレクトリに`pulsar-io-cassandra-2.9.1.nar`を移動
