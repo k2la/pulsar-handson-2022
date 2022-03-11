@@ -29,7 +29,7 @@ Docker を起動し、Preference > resources で memory を 4GB 以上に設定�
 ### 起動できることを確認する
 
 ```sh
-# repostiry を clone し handson directory に移動
+# repository を clone し handson directory に移動
 $ git clone https://github.com/k2la/pulsar-handson-2022.git
 $ cd pulsar-handson-2022/handson
 
